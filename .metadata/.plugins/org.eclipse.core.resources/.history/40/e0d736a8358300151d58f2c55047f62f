@@ -1,0 +1,23 @@
+package com.jits.shipping;
+
+public class Warehouse {
+	
+	Parcel setFieldsUsingBarcode(String barcode) throws JitsException {
+		String[] values = barcode.split("\\|");
+		
+		Parcel parcel = new Parcel();
+		
+		this.setId(values[0]);
+		this.setShippingType(values[1]);
+		this.setFromZip(values[2]);
+		this.setToZip(values[3]);
+		this.setWeight(values[4]);
+		this.setHeight(values[5]);
+		this.setWidth(values[6]);
+		this.setDepth(values[7]);
+		this.setOther(values[8]);
+		this.setHazards(values[9]);
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.jits.shipping;
+
+enum ShippingType {
+	
+	GRD,
+	AIR,
+	RAL
+
+}

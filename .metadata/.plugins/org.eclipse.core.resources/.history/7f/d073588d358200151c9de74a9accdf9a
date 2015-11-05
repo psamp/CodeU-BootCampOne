@@ -1,0 +1,149 @@
+package com.jits.shipping;
+
+class Parcel {
+	
+	private long id;
+	private String barcode;
+	private ShippingMethod shippingType;
+	private String fromZip;
+	private String toZip;
+	private double weight;
+	private int height;
+	private int width;
+	private int depth;
+	private String other;
+	private String hazards;
+	
+	Parcel(String barcode) throws JitsException {
+		this.setBarcode(barcode);
+		this.parseBarcode();
+	}
+	
+	void parseBarcode() throws JitsException {
+		String[] values = this.getBarcode().split("\\|");
+		
+		this.setId(values[0]);
+		this.setShippingType(values[1]);
+		this.setFromZip(values[2]);
+		this.setToZip(values[3]);
+		this.setWeight(values[4]);
+		this.setHeight(values[5]);
+		this.setWidth(values[6]);
+		this.setDepth(values[7]);
+		this.setOther(values[8]);
+		this.setHazards(values[9]);
+		
+	}
+	
+	private boolean checkZipCodes(String zip) throws JitsException {
+		
+		boolean check = false;
+		
+		if(zip.length() == 5 & zip.matches("[0-9]+")) {
+			check = true;
+		} else {
+			throw new JitsException("Zipcode must be 5 digits.", new IllegalArgumentException());
+		}
+		
+		return check;
+	}
+
+	long getId() {
+		return id;
+	}
+
+	void setId(String id) {
+		this.id = Long.parseLong(id);
+	}
+
+	String getShippingType() {
+		return shippingType.toString();
+	}
+
+	void setShippingType(String shippingType) throws JitsException {
+			try{
+				this.shippingType = ShippingMethod.valueOf(shippingType.toUpperCase());
+			} catch(IllegalArgumentException e) {
+				throw new JitsException("We only ship by ground (GRD), air (AIR) or railway (RAL.)", new IllegalArgumentException());
+			}
+	}
+
+	String getFromZip() {
+		return fromZip;
+	}
+
+	void setFromZip(String fromZip) throws JitsException {
+		if(this.checkZipCodes(fromZip)) {
+			this.fromZip = fromZip;
+		}
+	}
+
+	String getToZip() {
+		return toZip;
+	}
+
+	void setToZip(String toZip) throws JitsException {
+		if(this.checkZipCodes(fromZip)) {
+			this.toZip = toZip;
+		}
+	}
+
+	int getHeight() {
+		return height;
+	}
+
+	void setHeight(String height) {
+		this.height = Integer.parseInt(height);
+	}
+
+	int getWidth() {
+		return width;
+	}
+
+	void setWidth(String width) {
+		this.width = Interger.valueOf(width);
+	}
+
+	double getWeight() {
+		return weight;
+	}
+
+	void setWeight(String weight) {
+		this.weight = Math.ceil(Double.parseDouble(weight));
+	}
+
+	int getDepth() {
+		return depth;
+	}
+
+	void setDepth(String depth) {
+		this.depth = Integer.parseInt(depth);
+	}
+
+	String getBarcode() {
+		return barcode;
+	}
+
+	void setBarcode(String barcode) {
+		this.barcode = barcode;
+	}
+
+	String getHazards() {
+		return hazards;
+	}
+
+	void setHazards(String hazards) {
+		this.hazards = hazards;
+	}
+
+	String getOther() {
+		return other;
+	}
+
+	void setOther(String other) {
+		this.other = other;
+	}
+	
+	
+
+}

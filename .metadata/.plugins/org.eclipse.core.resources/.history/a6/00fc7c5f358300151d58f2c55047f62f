@@ -1,0 +1,5 @@
+package com.jits.shipping;
+
+public class Warehouse {
+
+}

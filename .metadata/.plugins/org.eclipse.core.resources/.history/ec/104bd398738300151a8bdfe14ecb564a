@@ -1,0 +1,18 @@
+package com.jits.library;
+
+import java.util.Comparator;
+
+import com.jits.shipping.Parcel;
+
+public class IdAndShippingMethodComparator implements Comparator<Parcel> {
+
+	@Override
+	public int compare(Parcel first, Parcel second) {
+		
+		if(first.getId() == second.getId() && first.getShippingType() == second.getShippingType()) {
+			
+		} )
+		
+	}
+
+}

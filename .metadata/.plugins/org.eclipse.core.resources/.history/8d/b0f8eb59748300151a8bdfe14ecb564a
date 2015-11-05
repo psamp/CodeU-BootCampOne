@@ -1,0 +1,23 @@
+package com.jits.library;
+
+import java.util.Comparator;
+
+import com.jits.shipping.Parcel;
+
+public class IdAndShippingMethodComparator implements Comparable<Parcel> {
+
+	@Override
+	public int compareTo(Parcel first, Parcel second) {
+		int rtn = -3;
+		if(first.getId() == second.getId() && first.getShippingType() == second.getShippingType()) {
+			rtn = 0;
+		} else if(first.getId() > second.getId()){
+			rtn = 1;
+		} else {
+			rtn = 3;
+		}
+		
+		return rtn;
+	}
+
+}

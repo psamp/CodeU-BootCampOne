@@ -1,0 +1,5 @@
+package com.jits.library;
+
+public class ShippingTypeValidator implements Comparator<T> {
+
+}

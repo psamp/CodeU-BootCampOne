@@ -1,0 +1,28 @@
+package com.jits.report;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+
+import com.jits.library.IdComparator;
+import com.jits.library.ShippingTypeComparator;
+import com.jits.shipping.Parcel;
+
+public class Report {
+	private static final String reportHeader = "JITS Shipping Package Report";
+	
+	static String getParcels(ArrayList<Parcel> pkg){
+		System.out.println(Report.reportHeader);
+		String report = "";
+		
+		Collections.sort(pkg, new IdComparator());
+		Collections.sort(pkg, new ShippingTypeComparator());
+		
+		for (Parcel parcel : pkg) {
+			report += parcel.toString() + "\n";
+		}
+		System.out.println("Printed on " + new Date());
+		
+		return report;
+	}
+
+}

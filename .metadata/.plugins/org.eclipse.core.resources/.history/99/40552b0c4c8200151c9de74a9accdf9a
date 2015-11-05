@@ -1,0 +1,20 @@
+package com.codeu.logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+
+public class MillionDollars {
+	private long oneMil;
+	private static final Logger log4j = LogManager.getLogger(MillionDollars.class);
+	
+	static {
+		log4j.setLevel(Level.ERROR);
+	}
+
+	public MillionDollars(long oneMil) {
+		this.oneMil = oneMil;
+	}
+	
+	
+
+}

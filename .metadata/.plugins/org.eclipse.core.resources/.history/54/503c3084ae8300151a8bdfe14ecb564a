@@ -1,0 +1,26 @@
+package com.jits.report;
+import java.util.ArrayList;
+import java.util.Collections;
+
+import com.jits.library.IdComparator;
+import com.jits.library.ShippingTypeComparator;
+import com.jits.shipping.JitsException;
+import com.jits.shipping.Parcel;
+import com.jits.shipping.Warehouse;
+
+public class Report {
+	
+	static String getParcels(ArrayList<Parcel> pkg){
+		String report = "";
+		
+		Collections.sort(pkg, new IdComparator());
+		Collections.sort(pkg, new ShippingTypeComparator());
+		
+		for (Parcel parcel : pkg) {
+			report += parcel.toString() + "\n";
+		}
+		
+		return report;
+	}
+
+}

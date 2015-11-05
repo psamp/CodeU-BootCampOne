@@ -1,0 +1,18 @@
+package com.jits.shipping;
+
+public class Validator {
+	
+	boolean checkZipCodes(String zip, int length) throws JitsException {
+		
+		boolean check = false;
+		
+		if(zip.length() == length & zip.matches("[0-9]+")) {
+			check = true;
+		} else {
+			throw new JitsException("String must be " + length + " digits.", new IllegalArgumentException());
+		}
+		
+		return check;
+	}
+
+}
