@@ -16,13 +16,13 @@ public class Report {
 
 	public static String generateParcelReport(ArrayList<Parcel> pkg) throws JitsException {
 		String report = "";
-		
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
-		Date printedAt = new Date();
-		
-		System.out.println(Report.reportHeader);
 
 		try {
+
+			SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
+			Date printedAt = new Date();
+
+			System.out.println(Report.reportHeader);
 
 			Collections.sort(pkg, new IdComparator());
 			Collections.sort(pkg, new ShippingTypeComparator());
@@ -31,13 +31,13 @@ public class Report {
 				report += parcel.toString() + "\n";
 			}
 
+			System.out.println("Printed on " + sdf.format(printedAt));
+
 		} catch(NullPointerException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 			
 		}
-		
-		System.out.println("Printed on " + sdf.format(printedAt));
 		
 		return report;
 	}

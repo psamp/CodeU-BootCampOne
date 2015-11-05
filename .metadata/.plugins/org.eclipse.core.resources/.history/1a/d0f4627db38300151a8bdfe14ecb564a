@@ -30,6 +30,8 @@ public class Report {
 			for (Parcel parcel : pkg) {
 				report += parcel.toString() + "\n";
 			}
+			
+			System.out.println("Printed on " + sdf.format(printedAt));
 
 		} catch(NullPointerException e) {
 			System.out.println(e.getMessage());

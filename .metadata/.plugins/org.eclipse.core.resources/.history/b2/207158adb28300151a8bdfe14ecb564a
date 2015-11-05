@@ -20,13 +20,6 @@ public class Parcel implements Serializable {
 	private String other;
 	private String hazards;
 	
-	public Parcel(String id, String shippingType) throws JitsException {
-		this.setId(id);
-		this.setShippingType(shippingType);
-	}
-	
-	Parcel() {}
-	
 	@Override
 	public String toString() {
 		return this.getId() + "\t" + this.getShippingType();

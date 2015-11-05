@@ -37,8 +37,6 @@ public class Report {
 			
 		}
 		
-		System.out.println("Printed on " + sdf.format(printedAt));
-		
 		return report;
 	}
 

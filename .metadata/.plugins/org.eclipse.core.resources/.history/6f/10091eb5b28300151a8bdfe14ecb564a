@@ -20,12 +20,10 @@ public class Parcel implements Serializable {
 	private String other;
 	private String hazards;
 	
-	public Parcel(String id, String shippingType) throws JitsException {
+	Parcel(String id, String shippingType) {
 		this.setId(id);
 		this.setShippingType(shippingType);
 	}
-	
-	Parcel() {}
 	
 	@Override
 	public String toString() {

@@ -24,7 +24,6 @@ public class Parcel implements Serializable {
 		this.setId(id);
 		this.setShippingType(shippingType);
 	}
-	
 	Parcel() {}
 	
 	@Override

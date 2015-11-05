@@ -34,22 +34,34 @@ public class ReportTest {
 		c = new Parcel("8978564598", "RAL");
 		pkg.add(c);
 		
-		d = new Parcel("1287782302", "AIR");
+		d = new Parcel();
+		d.setId("1287782302");
+		d.setShippingType("AIR");
 		pkg.add(d);
 		
-		e = new Parcel("9756342346", "GRD");
+		e = new Parcel();
+		e.setId("9756342346");
+		e.setShippingType("GRD");
 		pkg.add(e);
 		
-		f = new Parcel("1000000000", "RAL");
+		f = new Parcel();
+		f.setId("1000000000");
+		f.setShippingType("RAL");
 		pkg.add(f);
 		
-		g = new Parcel("2222222222", "AIR");
+		g = new Parcel();
+		g.setId("2222222222");
+		g.setShippingType("AIR");
 		pkg.add(g);
 		
-		h = new Parcel("1234567890", "GRD");
+		h = new Parcel();
+		h.setId("1234567890");
+		h.setShippingType("GRD");
 		pkg.add(h);
 		
-		i = new Parcel("1081243478", "RAL");
+		i = new Parcel();
+		i.setId("1081243478");
+		i.setShippingType("RAL");
 		pkg.add(i);
 		
 	}

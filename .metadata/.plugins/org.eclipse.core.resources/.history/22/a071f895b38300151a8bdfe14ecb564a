@@ -27,8 +27,12 @@ public class Report {
 			Collections.sort(pkg, new IdComparator());
 			Collections.sort(pkg, new ShippingTypeComparator());
 
-			for (Parcel parcel : pkg) {
-				report += parcel.toString() + "\n";
+//			for (Parcel parcel : pkg) {
+//				report += parcel.toString() + "\n";
+//			}
+			
+			for (int i = 0; i < pkg.size(); i++) {
+				report += pkg.get(i).toString() + "\n";
 			}
 
 		} catch(NullPointerException e) {

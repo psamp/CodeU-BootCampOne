@@ -29,6 +29,9 @@ public class Report {
 
 			for (Parcel parcel : pkg) {
 				report += parcel.toString() + "\n";
+				while( pkg.get(parcel) == 1) {
+					System.out.println("Printed on " + sdf.format(printedAt));
+				}
 			}
 
 		} catch(NullPointerException e) {
@@ -36,8 +39,6 @@ public class Report {
 			e.printStackTrace();
 			
 		}
-		
-		System.out.println("Printed on " + sdf.format(printedAt));
 		
 		return report;
 	}
