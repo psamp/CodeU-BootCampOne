@@ -1,0 +1,8 @@
+package com.jits.routing;
+
+interface Location {
+	
+	@Override
+	public String toString();
+
+}

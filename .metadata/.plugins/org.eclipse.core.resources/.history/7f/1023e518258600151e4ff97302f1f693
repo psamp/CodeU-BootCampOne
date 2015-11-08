@@ -1,0 +1,13 @@
+package com.jits.routing;
+
+class Destination implements Location {
+	private String address;
+	private String zipcode;
+
+	@Override
+	public String location() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

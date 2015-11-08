@@ -1,0 +1,33 @@
+package com.jits.routing;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class RouterTest {
+	
+	private Router router;
+	
+	@Before 
+	public void setUp() throws Exception {
+		router = new Router();
+	}
+
+	@Test
+	public void testLookUpDistributionCenter() {
+		String expectedGA = "Raleigh";
+		String actualGA = router.lookUpDistributionCenter("GA").getCity();
+		
+		String expectedWI = "Kansa City";
+		String actualWI = router.lookUpDistributionCenter("WI").getCity();
+		
+		String expectedHI = "N/A";
+		String actualHI = router.lookUpDistributionCenter("HI").getCity();
+		
+		assertEquals(expectedGA, actualGA);
+		assertEquals(expectedWI, actualWI);
+		assertEquals(expectedHI, actualHI);
+	}
+
+}

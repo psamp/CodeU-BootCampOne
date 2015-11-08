@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/Lab1A/src/com/jits/report/Report.java"/>
+<listEntry value="/Lab1/src/com/jits/report/Report.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.jits.report.Report"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Lab1A"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="Lab1"/>
 </launchConfiguration>

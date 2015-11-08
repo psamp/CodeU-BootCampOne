@@ -1,5 +1,0 @@
-package com.jits.shipping;
-
-public class JitsException extends Exception {
-
-}

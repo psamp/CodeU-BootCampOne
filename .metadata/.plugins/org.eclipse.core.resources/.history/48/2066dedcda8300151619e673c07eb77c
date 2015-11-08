@@ -1,0 +1,48 @@
+package com.jits.report;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+
+import com.jits.library.IdComparator;
+import com.jits.library.ShippingTypeComparator;
+import com.jits.shipping.JitsException;
+import com.jits.shipping.Parcel;
+
+public class Report {
+	private static SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
+	private static Date date = new Date();
+	private static final String reportHeader = "JITS Shipping Package Report";
+	
+	private static ArrayList<Parcel> sortParcelArray(ArrayList<Parcel> pkg) {
+		Collections.sort(pkg, new IdComparator());
+		Collections.sort(pkg, new ShippingTypeComparator());
+		
+		return pkg;
+	}
+
+	public static String generateParcelReport(ArrayList<Parcel> pkg) throws JitsException {
+		String report = "";
+		System.out.println(Report.reportHeader);
+
+		try {
+			Report.sortParcelArray(pkg);
+
+			for (Parcel parcel : pkg) {
+				report += parcel.toString() + "\n";
+			}
+
+		} catch(NullPointerException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		
+		System.out.println();
+		System.out.println(report);
+		System.out.println("Printed on " + Report.sdf.format(Report.date));
+		
+		return report;
+	}
+
+}

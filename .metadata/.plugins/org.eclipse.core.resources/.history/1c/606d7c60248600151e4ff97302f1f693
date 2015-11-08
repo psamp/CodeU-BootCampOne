@@ -1,0 +1,9 @@
+package com.jits.routing;
+
+public interface Location {
+	
+	public String toString();
+	
+	public int foooly();
+
+}

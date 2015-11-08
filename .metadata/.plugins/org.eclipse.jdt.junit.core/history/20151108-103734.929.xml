@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RouterTest (1)" project="Lab3" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.jits.routing.RouterTest" time="2.19">
+    <testcase name="testRouteParcelFirst" classname="com.jits.routing.RouterTest" time="0.889"/>
+    <testcase name="testLookUpDistributionCenter" classname="com.jits.routing.RouterTest" time="1.3"/>
+  </testsuite>
+</testrun>

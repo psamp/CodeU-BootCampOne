@@ -1,0 +1,87 @@
+package com.jits.report;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.jits.shipping.JitsException;
+import com.jits.shipping.Parcel;
+import com.jits.shipping.Warehouse;
+
+public class ReportTest {
+	
+	private ArrayList<Parcel> pkg;
+	private Warehouse warehouse;
+	private Parcel a;
+	private Parcel b;
+	private Parcel c;
+	private Parcel d;
+	private Parcel e;
+	private Parcel f;
+	private Parcel g;
+	private Parcel h;
+	private Parcel i;
+	
+	@Before
+	public void setUp() throws Exception {
+		pkg = new ArrayList<Parcel>();
+		
+		warehouse = new Warehouse();
+		
+		a = warehouse.newParcel("8978564598|AIR|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ");
+		pkg.add(a);
+		
+		b = warehouse.newParcel("9845340960|GRD|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ");
+		pkg.add(b);
+		
+		c = warehouse.newParcel("8978564598|RAL|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ");
+		pkg.add(c);
+		
+		d = warehouse.newParcel("1287782302|AIR|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ");
+		pkg.add(d);
+		
+		e = warehouse.newParcel("9756342346|GRD|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ");
+		pkg.add(e);
+		
+		f = warehouse.newParcel("1000000000|RAL|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ");
+		pkg.add(f);
+		
+		g = warehouse.newParcel("2222222222|AIR|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ");
+		pkg.add(g);
+		
+		h = warehouse.newParcel("1234567890|GRD|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ");
+		pkg.add(h);
+		
+		i = warehouse.newParcel("1081243478|RAL|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ");
+		pkg.add(i);
+	}
+
+	@Test
+	public void testGetParcels() throws JitsException {
+		String expected = "1287782302\tAIR" 
+							+ "\n" + 
+						  "2222222222\tAIR" 
+							+ "\n" + 
+						  "8978564598\tAIR" 
+							+ "\n" + 
+						  "9756342346\tGRD" 
+							+ "\n" + 
+						  "1234567890\tGRD" 
+							+ "\n" + 
+						  "9845340960\tGRD" 
+							+ "\n" + 
+						  "1000000000\tRAL" 
+							+ "\n" + 
+						  "1081243478\tRAL" 
+							+ "\n" + 
+						  "8978564598\tRAL" 
+							+ "\n";
+		
+		String actual = Report.generateParcelReport(pkg);
+		assertEquals(expected, actual);
+	}
+
+}

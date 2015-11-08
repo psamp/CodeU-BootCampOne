@@ -1,7 +1,0 @@
-package com.jits.library;
-
-import java.util.Comparator;
-
-public class IdAndShippingMethodComparator implements Comparator<T> {
-
-}

@@ -5,3 +5,7 @@
 1446693653219	Delete element
 1446719658038	Rename type 'IdAndShippingMethodComparator'
 1446720491394	Rename type 'ShippingTypeValidator'
+1446809069335	Rename resource 'log4j.xml'
+1446821445031	Delete element
+1446822447361	Rename type 'ParcelTest'
+1446838383642	Delete element

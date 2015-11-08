@@ -1,0 +1,40 @@
+package com.jits.shipping;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+import com.jits.library.IdComparator;
+import com.jits.library.ShippingTypeComparator;
+
+public class Warehouse {
+	ArrayList<Parcel> inventory;
+	
+	public Warehouse() {
+		inventory = new ArrayList<Parcel>();
+	}
+	
+	private void sortParcelArrayByIdThenShippingType() {
+		Collections.sort(inventory, new IdComparator());
+		Collections.sort(inventory, new ShippingTypeComparator());
+	}
+	
+	public Parcel newParcel(String barcode) throws JitsException {
+		String[] values = barcode.split("\\|");
+		
+		Parcel parcel = new Parcel();
+		
+		parcel.setId(values[0]);
+		parcel.setShippingType(values[1]);
+		parcel.setFromZip(values[2]);
+		parcel.setToZip(values[3]);
+		parcel.setWeight(values[4]);
+		parcel.setHeight(values[5]);
+		parcel.setWidth(values[6]);
+		parcel.setDepth(values[7]);
+		
+		inventory.add(parcel);
+		
+		return parcel;
+	}
+
+}

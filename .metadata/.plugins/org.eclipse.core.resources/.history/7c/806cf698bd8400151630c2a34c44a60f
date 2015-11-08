@@ -1,0 +1,26 @@
+package com.jits.routing;
+
+class DistributionCenter {
+	private String destination;
+	private String state;
+	
+	
+	String getDestination() {
+		return destination;
+	}
+	
+	private void setDestination(String destination) {
+		this.destination = destination;
+	}
+	
+	String getState() {
+		return state;
+	}
+	
+	private void setState(String state) {
+		this.state = state;
+	}
+	
+	
+
+}

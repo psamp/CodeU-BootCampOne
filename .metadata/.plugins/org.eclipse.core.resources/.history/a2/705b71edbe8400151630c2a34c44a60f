@@ -1,0 +1,14 @@
+package com.jits.routing;
+
+import java.util.Map;
+
+public class Router {
+	private static Map<String, DistributionCenter> statesToDestinationCenters;
+	
+	static {
+		
+		Router.statesToDestinationCenters = new HashMap<String, DistributionCenter>();
+		
+	}
+
+}
