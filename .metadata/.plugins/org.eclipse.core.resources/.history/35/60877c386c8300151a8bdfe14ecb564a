@@ -1,7 +1,0 @@
-package com.jits.library;
-
-enum SortBy {
-	ID,
-	SHIPPINGMETHOD
-
-}

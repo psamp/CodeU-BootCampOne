@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.jits.routing.Router;
 import com.jits.shipping.JitsException;
 import com.jits.shipping.Parcel;
 import com.jits.shipping.Warehouse;
@@ -39,8 +38,6 @@ public class ReportTest {
 		h = warehouse.newParcel("1234567890|GRD|30326|06468|5.09|5|4.45|7.86|&*^89786|XYZ|93 Hurricane Circle");
 		i = warehouse.newParcel("1081243478|RAL|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ|12 Main St.");
 		
-		Router router = new Router();
-		
 		ArrayList<Parcel> routeGRDParcels = new ArrayList<Parcel>();
 		
 		routeGRDParcels.add(b);
@@ -48,8 +45,8 @@ public class ReportTest {
 		routeGRDParcels.add(h);
 		
 		for (Parcel parcel : routeGRDParcels) {
-			router.routeParcel(parcel);
-			router.routeParcel(parcel);
+			parcel.shipParcel();
+			parcel.shipParcel();
 		}
 		
 	}

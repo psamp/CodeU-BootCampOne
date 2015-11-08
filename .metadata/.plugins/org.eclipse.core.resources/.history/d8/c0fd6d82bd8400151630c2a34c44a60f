@@ -1,7 +1,0 @@
-package com.jits.routing;
-
-class DistributionCenter {
-	private String destination;
-	private String state;
-
-}

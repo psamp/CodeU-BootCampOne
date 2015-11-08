@@ -2,7 +2,6 @@ package com.jits.routing;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,7 +9,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.jits.shipping.JitsException;
-import com.jits.shipping.Parcel;
 
 import jxl.*;
 import jxl.read.biff.BiffException;
@@ -18,7 +16,6 @@ import jxl.read.biff.BiffException;
 public class Router {
 	
 	private static Map<String, DistributionCenter> statesToDistributionCenters;
-	private ArrayList<Location> locations;
 	private static final Logger logger = LogManager.getLogger(Router.class.getSimpleName());
 	
 	static {
@@ -108,7 +105,7 @@ public class Router {
 		
 	}
 	
-	DistributionCenter distributionCenterLookup(String zipcode) throws JitsException {
+	public DistributionCenter distributionCenterLookup(String zipcode) throws JitsException {
 		DistributionCenter rtn;
 		
 		try {
@@ -128,21 +125,15 @@ public class Router {
 		
 	}
 	
-	public void routeParcel(Parcel parcel) throws JitsException {
-		
-		locations = new ArrayList<Location>();
-		
-		locations.add(this.distributionCenterLookup(parcel.getToZip()));
-		locations.add(new Destination(parcel.getAddress(), parcel.getToZip()));
-		
-		if(parcel.getRouteSequenceTracker() == 1) {
-			parcel.setLocation(locations.get(0).location());
-		} else if(parcel.getRouteSequenceTracker() == 2) {
-			parcel.setLocation(locations.get(1).location());
-		} else {
-			logger.error("Package has arrived at destination.");
-		}
-		
-	}
+//	public void routeParcel(Parcel parcel) throws JitsException {
+//		
+//		locations = new ArrayList<Location>();
+//		
+//		locations.add(this.distributionCenterLookup(parcel.getToZip()));
+//		locations.add(new Destination(parcel.getAddress(), parcel.getToZip()));
+//		
+//		parcel.setLocation(locations.get(parcel.getRouteSequenceTracker() - 1).location());
+//		
+//	}
 
 }

@@ -3,7 +3,6 @@
 <fullyQualifiedTypeName name="java.lang.Number"/>
 <fullyQualifiedTypeName name="org.apache.logging.log4j.Level"/>
 <fullyQualifiedTypeName name="com.codeu.logger.MillionDollars"/>
-<fullyQualifiedTypeName name="java.util.TreeSet"/>
 <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
 <fullyQualifiedTypeName name="com.jits.library.IdAndShippingMethodComparator"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
@@ -13,9 +12,6 @@
 <fullyQualifiedTypeName name="com.jits.library.IdComparator"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-<fullyQualifiedTypeName name="com.jits.shipping.Parcel"/>
-<fullyQualifiedTypeName name="com.jits.shipping.Warehouse"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.jits.report.Report"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
@@ -26,4 +22,17 @@
 <fullyQualifiedTypeName name="com.jits.shipping.JitsException"/>
 <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
 <fullyQualifiedTypeName name="com.jits.routing.DistributionCenter"/>
+<fullyQualifiedTypeName name="jxl.read.biff.WorkbookParser"/>
+<fullyQualifiedTypeName name="jxl.Workbook"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="javax.tools.JavaFileManager.Location"/>
+<fullyQualifiedTypeName name="com.jits.routing.Location"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="java.util.TreeSet"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="com.jits.shipping.Warehouse"/>
+<fullyQualifiedTypeName name="com.jits.shipping.Parcel"/>
+<fullyQualifiedTypeName name="com.jits.routing.Router"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

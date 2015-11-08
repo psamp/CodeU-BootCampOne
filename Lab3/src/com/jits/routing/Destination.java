@@ -1,11 +1,11 @@
 package com.jits.routing;
 
-class Destination implements Location {
+public class Destination implements Location {
 	private String address;
 	private String zipcode;
 	
 
-	Destination(String address, String zipcode) {
+	public Destination(String address, String zipcode) {
 		this.setAddress(address);
 		this.setZipcode(zipcode);
 	}

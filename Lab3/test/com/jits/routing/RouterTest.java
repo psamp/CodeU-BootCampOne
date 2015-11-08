@@ -8,8 +8,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.jits.shipping.JitsException;
-import com.jits.shipping.Parcel;
-import com.jits.shipping.Warehouse;
 
 public class RouterTest {
 	
@@ -41,22 +39,6 @@ public class RouterTest {
 		assertEquals(expectedWI, actualWI);
 		assertEquals(expectedID, actualID);
 		assertEquals(expectedHI, actualHI);
-	}
-	
-	@Test
-		public void testRouteParcel() throws JitsException {
-		Warehouse warehouse = new Warehouse();
-		Parcel parcel = warehouse.newParcel("89687676564|GRD|12345|30313|5.09|5|4.45|7.86|&*^89786|XYZ|426 Marietta St.");
-		
-		router.routeParcel(parcel);
-		String expectedOne = "Whse DistCtr: DC1 Raleigh ";
-		String actualOne = parcel.getLocation();
-		assertEquals(expectedOne, actualOne);
-		
-		router.routeParcel(parcel);
-		String expectedTwo = "Whse DistCtr: DC1 Raleigh Dest: 426 Marietta St. 30313";
-		String actualTwo = parcel.getLocation();
-		assertEquals(expectedTwo, actualTwo);
 	}
 
 }
