@@ -2,7 +2,6 @@ package com.jits.shipping;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -206,8 +205,8 @@ public class Parcel implements Serializable {
 		if (this.routeIndex == 0) {
 			
 			this.location = route;
-			
 			this.routeIndex = this.routeIndex + 1;
+			
 		} else {
 			
 			this.location += route;

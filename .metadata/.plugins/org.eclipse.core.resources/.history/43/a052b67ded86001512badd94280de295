@@ -1,0 +1,7 @@
+package com.jits.routing;
+
+public abstract class Location {
+	
+	public String location();
+
+}

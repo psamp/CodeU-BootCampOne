@@ -91,6 +91,9 @@
 	</section>
 	<section name="CallHierarchySearchScope">
 	</section>
+	<section name="SelfEncapsulateFieldWizard">
+		<item value="false" key="GenerateJavadoc"/>
+	</section>
 	<section name="SourceActionDialog.constructors">
 		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="Comments"/>

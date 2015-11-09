@@ -14,14 +14,16 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="/Users/psampson/Dropbox (CodeU)/CodeU Team Folder/BootCamps/BootCamp I/LabSetup"/>
+			<item value="/Users/psampson/Dropbox (CodeU)/CodeU Team Folder/BootCamps/BootCamp I/LabSetup/Lab04"/>
 			<item value="/Users/psampson/Dropbox (CodeU)/CodeU Team Folder/BootCamps/BootCamp I/LabSetup/Lab03"/>
 			<item value="/Users/psampson/Dropbox (CodeU)/CodeU Team Folder/BootCamps/BootCamp I/LabSetup/Lab03/jexcelapi"/>
 			<item value="/Users/psampson/Downloads/chrome"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="-1" key="dialogWidth"/>
-		<item value="-1" key="dialogHeight"/>
+		<item value="900" key="dialogWidth"/>
+		<item value="563" key="dialogHeight"/>
 		<list key="orderedProviders">
 		</list>
 		<list key="textArray">

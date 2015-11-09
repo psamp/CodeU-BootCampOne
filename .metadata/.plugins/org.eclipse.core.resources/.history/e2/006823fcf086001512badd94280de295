@@ -1,0 +1,18 @@
+package com.jits.routing;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public abstract class Location {
+	
+	public abstract String location();
+	
+	protected String scanParcel(long id) {
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("EEE MMM d hh:mm:ss z yyyy");
+		Date date = new Date();
+		
+		return this.location() + "|" + id + "|" + sdf.format(date);
+	}
+
+}

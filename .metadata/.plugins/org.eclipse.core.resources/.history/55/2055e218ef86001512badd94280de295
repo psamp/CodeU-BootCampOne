@@ -1,0 +1,11 @@
+package com.jits.routing;
+
+public abstract class Location {
+	
+	public abstract String location();
+	
+	String scanParcel() {
+		
+	}
+
+}

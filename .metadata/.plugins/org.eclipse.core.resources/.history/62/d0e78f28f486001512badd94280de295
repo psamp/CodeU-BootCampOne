@@ -1,0 +1,26 @@
+package com.jits.routing;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class Chalkboard {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		String concatDestinationInfo = "12 Main St." + "12345";
+		String removeAllWhiteSpace = concatDestinationInfo.replaceAll("\\s+", "");
+		String[] array = removeAllWhiteSpace.split(("?!^)"));
+		
+		
+		for (int i = 0; i < array.length; i++) {
+			System.out.println(i);
+		}
+	}
+
+}

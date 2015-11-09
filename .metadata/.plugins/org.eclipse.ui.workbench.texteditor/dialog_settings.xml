@@ -15,12 +15,14 @@
 		<item value="false" key="wholeword"/>
 		<item value="" key="selection"/>
 		<list key="findhistory">
+			<item value="if"/>
+			<item value="locations"/>
+			<item value="locar"/>
 			<item value="tostring"/>
 			<item value="DestinationCenters"/>
 			<item value="statesToDestinationCenters.put("/>
 			<item value="984534096"/>
 			<item value="compareTo"/>
-			<item value="compareto"/>
 		</list>
 		<list key="replacehistory">
 			<item value="DistributionCenters"/>
