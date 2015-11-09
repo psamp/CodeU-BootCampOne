@@ -38,4 +38,5 @@
 <fullyQualifiedTypeName name="com.jits.shipping.util.TrackingWriter"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.apache.logging.log4j.Logger"/>
+<fullyQualifiedTypeName name="com.jits.parcel.ShippingMethod"/>
 </qualifiedTypeNameHistroy>

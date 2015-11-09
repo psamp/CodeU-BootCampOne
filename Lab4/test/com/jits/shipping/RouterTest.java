@@ -8,15 +8,15 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.jits.parcel.JitsException;
-import com.jits.shipping.Router;
+import com.jits.shipping.GroundRouter;
 
 public class RouterTest {
 	
-	private Router router;
+	private GroundRouter router;
 	
 	@Before 
 	public void setUp() throws Exception {
-		router = new Router();
+		router = new GroundRouter();
 	}
 	
 	@Rule
@@ -24,17 +24,17 @@ public class RouterTest {
 
 	@Test
 	public void testLookUpDistributionCenter() throws JitsException {
-		String expectedGA = "Raleigh";
-		String actualGA = router.distributionCenterLookup("GA").getCity();
+		String expectedGA = "DC1";
+		String actualGA = router.distributionCenterLookup("30331").getDestination();
 		
-		String expectedWI = "Kansas City";
-		String actualWI = router.distributionCenterLookup("WI").getCity();
+		String expectedWI = "DC2";
+		String actualWI = router.distributionCenterLookup("53004").getDestination();
 		
-		String expectedID = "Denver";
-		String actualID = router.distributionCenterLookup("ID").getCity();
+		String expectedID = "DC3";
+		String actualID = router.distributionCenterLookup("85014").getDestination();
 		
-		String expectedHI = "N/A";
-		String actualHI = router.distributionCenterLookup("HI").getCity();
+		String expectedHI = "NA";
+		String actualHI = router.distributionCenterLookup("96716").getDestination();
 		
 		assertEquals(expectedGA, actualGA);
 		assertEquals(expectedWI, actualWI);

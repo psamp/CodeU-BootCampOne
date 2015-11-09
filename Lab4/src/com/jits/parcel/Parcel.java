@@ -2,6 +2,8 @@ package com.jits.parcel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,10 +11,10 @@ import org.apache.logging.log4j.Logger;
 import com.jits.library.Validator;
 import com.jits.shipping.Destination;
 import com.jits.shipping.Location;
-import com.jits.shipping.Router;
+import com.jits.shipping.GroundRouter;
 import com.jits.shipping.util.TrackingWriter;
 
-public class Parcel implements Serializable {
+public class Parcel implements Serializable, Comparable<Parcel> {
 	/**
 	 * 
 	 */
@@ -27,41 +29,39 @@ public class Parcel implements Serializable {
 	private int width;
 	private int depth;
 	private Location location;
-	private String routeHistory;
-	private int routeIndex;
-	private ArrayList<Location> route = new ArrayList<Location>();
+	private LinkedList<Location> route = new LinkedList<Location>();
 	private ArrayList<String> trackingBarcodes = new ArrayList<String>();
-
+	private Iterator<Location> routeIterator = null;
+	
 	private static final Logger logger = LogManager.getLogger(Parcel.class.getSimpleName());
 	
-	private void determineRoute() throws JitsException {
+	void determineRoute() throws JitsException {
 		
-		route = new ArrayList<Location>();
-		Router router = new Router();
+		GroundRouter router = new GroundRouter();
+		this.route = new LinkedList<Location>();
 
 		route.add(new Warehouse());
 		route.add(router.distributionCenterLookup(this.getToZip()));
 		route.add(new Destination(this.getAddress(), this.getToZip()));
-		
+		this.shipParcel();
+
 	}
 	
 	public void shipParcel() throws JitsException {
 
-		if (this.getRouteIndex() >= 3) {
+		if (this.routeIterator == null) {
 
-			logger.error("Package has arrived at destination.");
+			this.routeIterator = this.route.iterator();
 
-		} else {
+		} if(this.routeIterator.hasNext()) {
 			
-			this.determineRoute();
-			this.setLocation(route.get(this.getRouteIndex()));
+			this.setLocation(this.routeIterator.next());
 			
-			String trackingStr = this.getLocation().scanParcel(this.getId());
-			this.setTrackingBarcodes(trackingStr);
+//			String trackingStr = this.getLocation().scanParcel(this.getId());
+//			this.setTrackingBarcodes(trackingStr);
 			
-			TrackingWriter writer = new TrackingWriter("tracker.txt", true);
-			writer.write(trackingStr);
-
+			TrackingWriter writer = new TrackingWriter("tracker.txt", false);
+//			writer.write(trackingStr);
 		}
 	}
 
@@ -86,8 +86,8 @@ public class Parcel implements Serializable {
 
 	}
 
-	public String getShippingType() {
-		return shippingType.toString();
+	public ShippingMethod getShippingType() {
+		return shippingType;
 	}
 
 	public void setShippingType(String incoming) throws JitsException {
@@ -137,8 +137,6 @@ public class Parcel implements Serializable {
 			}
 
 		} catch (JitsException e) {
-
-			Parcel.logger.error(e.getMessage());
 			e.printStackTrace();
 			throw e;
 
@@ -219,35 +217,28 @@ public class Parcel implements Serializable {
 	}
 
 	private void setLocation(Location location) {
-			if(this.getShippingType() == "GRD") {
+			if(this.getShippingType().equals(ShippingMethod.GRD)) {
 				this.location = location;
-				this.setRouteHistory(this.getLocation().location());
-				++this.routeIndex;
 			}
 	}
-
-	public int getRouteIndex() {
-		return routeIndex;
-	}
 	
-	public String getRouteHistory() {
-		return routeHistory;
+	public LinkedList<Location> getRoute() {
+		return route;
 	}
 
-	private void setRouteHistory(String routeMssg) {
-		if(this.getRouteIndex() == 0) {
-			this.routeHistory = routeMssg;
-		} else {
-			this.routeHistory += routeMssg;
-		}
-	}
-	
 	ArrayList<String> getTrackingBarcodes() {
 		return trackingBarcodes;
 	}
 
-	private void setTrackingBarcodes(String bc) {
-		this.trackingBarcodes.add(bc);
+	@Override
+	public int compareTo(Parcel o) {
+		int id = Long.compare(this.getId(), o.getId());
+		
+		if(id!=0){
+			return id;
+		} else {
+			return this.getShippingType().compareTo(o.getShippingType());
+		}
 	}
 
 }

@@ -19,7 +19,7 @@ public class WarehouseTest {
 	@Before
 	public void setUp() throws Exception {
 		warehouse = new Warehouse();
-		parcel = warehouse.newParcel("89687676564|AIR|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ|12 Main St.");
+		parcel = warehouse.newParcel("89687676564|GRD|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ|12 Main St.");
 	}
 	
 	@Rule
@@ -29,7 +29,7 @@ public class WarehouseTest {
 	public void testNewParcelFromIncomingBarcode() throws JitsException {
 
 		assertEquals(89687676564L, parcel.getId());
-		assertEquals("AIR", parcel.getShippingType());
+		assertEquals("GRD", parcel.getShippingType().toString());
 		assertEquals("30326", parcel.getFromZip());
 		assertEquals("30331", parcel.getToZip());
 		assertEquals(6, parcel.getWeight(), .001);
@@ -37,8 +37,8 @@ public class WarehouseTest {
 		assertEquals(5, parcel.getWidth(), .001);
 		assertEquals(8, parcel.getDepth(), .001);
 		assertEquals("12 Main St.", parcel.getAddress());
-		assertEquals(null, parcel.getRouteHistory());
-		assertEquals(0, parcel.getRouteIndex());
+		assertEquals("Whse ", parcel.getLocation().location());
+		System.out.println(parcel.getLocation().location());
 	}
 	
 	@Test
@@ -89,15 +89,5 @@ public class WarehouseTest {
 		assertEquals(expected, actual);
 		
 	}
-	
-//	@Test
-//	public void testScanParcel() {
-//
-//		String expected = parcel.getRouteHistory();
-//		
-//		assertEquals(true, expected.contains("Whse"));
-//		assertEquals(true, expected.contains("89687676564"));
-//		
-//	}
 
 }

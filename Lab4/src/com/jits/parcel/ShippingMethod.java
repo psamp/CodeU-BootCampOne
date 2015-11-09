@@ -1,6 +1,6 @@
 package com.jits.parcel;
 
-enum ShippingMethod {
+public enum ShippingMethod {
 	
 	GRD,
 	AIR,
