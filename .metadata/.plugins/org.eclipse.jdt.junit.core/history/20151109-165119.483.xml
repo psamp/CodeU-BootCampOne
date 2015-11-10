@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="RouterTest (2)" project="Lab4" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.jits.shipping.RouterTest" time="1.31">
-    <testcase name="testLookUpDistributionCenter" classname="com.jits.shipping.RouterTest" time="1.31"/>
-  </testsuite>
-</testrun>

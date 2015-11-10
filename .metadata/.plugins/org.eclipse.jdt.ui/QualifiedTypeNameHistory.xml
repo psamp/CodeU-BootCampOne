@@ -5,11 +5,8 @@
 <fullyQualifiedTypeName name="com.codeu.logger.MillionDollars"/>
 <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
 <fullyQualifiedTypeName name="com.jits.library.IdAndShippingMethodComparator"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="com.jits.library.ShippingTypeValidator"/>
-<fullyQualifiedTypeName name="com.jits.library.ShippingTypeComparator"/>
-<fullyQualifiedTypeName name="com.jits.library.IdComparator"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="com.jits.report.Report"/>
@@ -25,9 +22,7 @@
 <fullyQualifiedTypeName name="jxl.read.biff.WorkbookParser"/>
 <fullyQualifiedTypeName name="jxl.Workbook"/>
 <fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="javax.tools.JavaFileManager.Location"/>
 <fullyQualifiedTypeName name="com.jits.routing.Location"/>
-<fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="com.jits.shipping.Warehouse"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="com.jits.routing.Router"/>
@@ -36,7 +31,17 @@
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="com.jits.shipping.Destination"/>
 <fullyQualifiedTypeName name="com.jits.shipping.util.TrackingWriter"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.apache.logging.log4j.Logger"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="javax.tools.JavaFileManager.Location"/>
+<fullyQualifiedTypeName name="com.jits.library.IdComparator"/>
+<fullyQualifiedTypeName name="com.jits.library.ShippingTypeComparator"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="com.jits.shipping.Location"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="com.jits.parcel.JitsException"/>
 <fullyQualifiedTypeName name="com.jits.parcel.ShippingMethod"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

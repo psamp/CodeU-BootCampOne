@@ -2,27 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="265" key="DIALOG_WIDTH"/>
-		<item value="242" key="DIALOG_Y_ORIGIN"/>
-		<item value="764" key="DIALOG_X_ORIGIN"/>
+		<item value="130" key="DIALOG_Y_ORIGIN"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
+		<item value="861" key="DIALOG_X_ORIGIN"/>
 		<item value="1|.Helvetica Neue DeskInterface|11.0|0|COCOA|1|.HelveticaNeueDeskInterface-Regular" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="==" key="selection"/>
+		<item value="trackingStr" key="selection"/>
 		<list key="findhistory">
+			<item value="trackingStr"/>
+			<item value="++this.routeIndex;"/>
 			<item value="=="/>
 			<item value="++this.routeIndex;&#x0A;"/>
 			<item value="if"/>
 			<item value="locations"/>
 			<item value="locar"/>
 			<item value="tostring"/>
-			<item value="DestinationCenters"/>
-			<item value="statesToDestinationCenters.put("/>
 		</list>
 		<list key="replacehistory">
 			<item value="DistributionCenters"/>

@@ -1,0 +1,13 @@
+package com.jits.shipping;
+
+import java.util.Date;
+
+public abstract class Location {
+	
+	public abstract String location();
+	
+	public String scanParcel(long id) {
+		return this.location().trim() + "|" + id + "|" + new Date().toString();
+	}
+
+}

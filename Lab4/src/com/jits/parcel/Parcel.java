@@ -59,11 +59,11 @@ public class Parcel implements Serializable, Comparable<Parcel> {
 
 			this.setLocation(this.routeIterator.next());
 
-			String trackingStr = this.getLocation().scanParcel(this.getId());
-			this.setTrackingBarcodes(trackingStr);
+			String tracking = this.getLocation().scanParcel(this.getId());
+			this.setTrackingBarcodes(tracking);
 
 			TrackingWriter writer = new TrackingWriter("tracker.txt", false);
-			writer.write(trackingStr);
+			writer.write(tracking);
 		} else {
 			logger.debug("Package has arrived at destination.");
 		}
