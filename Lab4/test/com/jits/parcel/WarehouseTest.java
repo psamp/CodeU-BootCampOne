@@ -27,7 +27,9 @@ public class WarehouseTest {
 	
 	@Test
 	public void testNewParcelFromIncomingBarcode() throws JitsException {
-
+		
+		parcel = warehouse.newParcel("89687676564|GRD|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ|12 Main St.");
+		
 		assertEquals(89687676564L, parcel.getId());
 		assertEquals("GRD", parcel.getShippingType().toString());
 		assertEquals("30326", parcel.getFromZip());
@@ -38,7 +40,6 @@ public class WarehouseTest {
 		assertEquals(8, parcel.getDepth(), .001);
 		assertEquals("12 Main St.", parcel.getAddress());
 		assertEquals("Whse ", parcel.getLocation().location());
-		System.out.println(parcel.getLocation().location());
 	}
 	
 	@Test
@@ -83,10 +84,12 @@ public class WarehouseTest {
 	@Test
 	public void getReport() {
 
-		String expected = "89687676564\tAIR" + "\n";
 		String actual = warehouse.getReport();
 		
-		assertEquals(expected, actual);
+		assertEquals(true, actual.contains("89687676564"));
+		assertEquals(true, actual.contains("GRD"));
+		assertEquals(true, actual.contains("DC1 Raleigh"));
+		assertEquals(true, actual.contains("12 Main St. 30331"));
 		
 	}
 

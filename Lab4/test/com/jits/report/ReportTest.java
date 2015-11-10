@@ -2,8 +2,6 @@ package com.jits.report;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,14 +11,22 @@ import com.jits.parcel.Warehouse;
 
 public class ReportTest {
 	private Warehouse warehouse;
+	@SuppressWarnings("unused")
 	private Parcel a;
 	private Parcel b;
+	@SuppressWarnings("unused")
 	private Parcel c;
+	@SuppressWarnings("unused")
 	private Parcel d;
+	@SuppressWarnings("unused")
 	private Parcel e;
+	@SuppressWarnings("unused")
 	private Parcel f;
+	@SuppressWarnings("unused")
 	private Parcel g;
+	@SuppressWarnings("unused")
 	private Parcel h;
+	@SuppressWarnings("unused")
 	private Parcel i;
 	
 	@Before
@@ -38,43 +44,17 @@ public class ReportTest {
 		h = warehouse.newParcel("1234567890|GRD|30326|06468|5.09|5|4.45|7.86|&*^89786|XYZ|93 Hurricane Circle");
 		i = warehouse.newParcel("1081243478|RAL|30326|30331|5.09|5|4.45|7.86|&*^89786|XYZ|12 Main St.");
 		
-		ArrayList<Parcel> routeGRDParcels = new ArrayList<Parcel>();
-		
-		routeGRDParcels.add(b);
-		routeGRDParcels.add(e);
-		routeGRDParcels.add(h);
-		
-		for (Parcel parcel : routeGRDParcels) {
-			parcel.shipParcel();
-			parcel.shipParcel();
-		}
-		
 	}
 
 	@Test
 	public void testGetParcels() throws JitsException {
-		
-		String expected = "1287782302\tAIR" 
-							+ "\n" + 
-						  "2222222222\tAIR" 
-							+ "\n" + 
-						  "8978564598\tAIR" 
-							+ "\n" + 
-						  "1234567890\tGRD Whse DistCtr: DC1 Raleigh Dest: 93 Hurricane Circle 06468" 
-							+ "\n" + 
-						  "9756342346\tGRD Whse DistCtr: DC3 Denver Dest: 56 Main St. 86038" 
-							+ "\n" + 
-						  "9845340960\tGRD Whse DistCtr: DC1 Raleigh Dest: 1138 Star Way 30331" 
-							+ "\n" + 
-						  "1000000000\tRAL" 
-							+ "\n" + 
-						  "1081243478\tRAL" 
-							+ "\n" + 
-						  "8978564598\tRAL" 
-							+ "\n";
-		
 		String actual = warehouse.getReport();
-		assertEquals(expected, actual);
+		assertEquals(true, actual.contains("JITS Shipping Package Report"));
+		assertEquals(true, actual.contains("8978564598\tAIR"));
+		assertEquals(true, actual.contains("9845340960\tGRD"));
+		assertEquals(true, actual.contains(b.getEntireRoute()));
+		assertEquals(true, actual.contains("8978564598\tRAL"));
+		assertEquals(true, actual.contains("Printed on "));
 	}
 
 }

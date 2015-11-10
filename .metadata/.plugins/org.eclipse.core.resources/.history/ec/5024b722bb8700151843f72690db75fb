@@ -1,0 +1,9 @@
+package com.jits.parcel;
+
+public enum ShippingMethod {
+	
+	AIR,
+	GRD,
+	RAL
+
+}

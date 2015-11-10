@@ -3,8 +3,6 @@ package com.jits.parcel;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import com.jits.library.IdComparator;
-import com.jits.library.ShippingTypeComparator;
 import com.jits.report.Report;
 import com.jits.shipping.Location;
 
@@ -15,14 +13,9 @@ public class Warehouse extends Location {
 		inventory = new ArrayList<Parcel>();
 	}
 	
-	private void sortParcelArrayByIdThenShippingType() {
-		Collections.sort(inventory, new IdComparator());
-		Collections.sort(inventory, new ShippingTypeComparator());
-	}
-	
 	private void updateInventory(Parcel parcel) {
 		inventory.add(parcel);
-		this.sortParcelArrayByIdThenShippingType();
+		Collections.sort(inventory);
 	}
 	
 	public Parcel newParcel(String barcode) throws JitsException {
