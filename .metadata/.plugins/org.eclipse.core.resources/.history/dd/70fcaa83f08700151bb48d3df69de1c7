@@ -13,7 +13,7 @@ public class Destination extends Location {
 	private int encodeDestination() {
 		String concatDestinationInfo = this.getAddress() + this.getZipcode();
 		String removeAllWhiteSpace = concatDestinationInfo.replaceAll("\\s+", "");
-		char[] array = removeAllWhiteSpace.trim().toCharArray();
+		char[] array = removeAllWhiteSpace.toCharArray();
 		
 		int sum = 0;
 		
