@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="ParcelTest (1)" project="Lab4" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="com.jits.parcel.ParcelTest" time="2.406">
-    <testcase name="testRouteHistory" classname="com.jits.parcel.ParcelTest" time="2.037"/>
-    <testcase name="testTrackingStrings" classname="com.jits.parcel.ParcelTest" time="0.369"/>
-  </testsuite>
-</testrun>

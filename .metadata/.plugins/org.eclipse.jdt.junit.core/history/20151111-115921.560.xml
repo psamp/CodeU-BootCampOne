@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="test (4)" project="Lab5" tests="11" started="11" failures="0" errors="0" ignored="0">
+  <testsuite name="com.jits.shipping.routing.RouterTest" time="1.846">
+    <testcase name="testLookUpDistributionCenter" classname="com.jits.shipping.routing.RouterTest" time="1.846"/>
+  </testsuite>
+  <testsuite name="com.jits.shipping.routing.DestinationTest" time="0.003">
+    <testcase name="testScanParcel" classname="com.jits.shipping.routing.DestinationTest" time="0.003"/>
+  </testsuite>
+  <testsuite name="com.jits.shipping.WarehouseTest" time="1.532">
+    <testcase name="testToZip" classname="com.jits.shipping.WarehouseTest" time="1.518"/>
+    <testcase name="testInvalidShippingType" classname="com.jits.shipping.WarehouseTest" time="0.003"/>
+    <testcase name="testFromZip" classname="com.jits.shipping.WarehouseTest" time="0.003"/>
+    <testcase name="testId" classname="com.jits.shipping.WarehouseTest" time="0.002"/>
+    <testcase name="testNewParcelFromIncomingBarcode" classname="com.jits.shipping.WarehouseTest" time="0.0"/>
+    <testcase name="testGetReport" classname="com.jits.shipping.WarehouseTest" time="0.004"/>
+  </testsuite>
+  <testsuite name="com.jits.shipping.report.ReportTest" time="0.007">
+    <testcase name="testGetParcels" classname="com.jits.shipping.report.ReportTest" time="0.007"/>
+  </testsuite>
+  <testsuite name="com.jits.shipping.ParcelTest" time="0.002">
+    <testcase name="testRouteHistory" classname="com.jits.shipping.ParcelTest" time="0.001"/>
+    <testcase name="testTrackingStrings" classname="com.jits.shipping.ParcelTest" time="0.001"/>
+  </testsuite>
+</testrun>

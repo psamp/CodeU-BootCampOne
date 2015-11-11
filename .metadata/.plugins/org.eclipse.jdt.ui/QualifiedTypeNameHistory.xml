@@ -7,7 +7,6 @@
 <fullyQualifiedTypeName name="com.jits.library.IdAndShippingMethodComparator"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="com.jits.library.ShippingTypeValidator"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="com.jits.report.Report"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
@@ -44,4 +43,11 @@
 <fullyQualifiedTypeName name="com.jits.parcel.JitsException"/>
 <fullyQualifiedTypeName name="com.jits.parcel.ShippingMethod"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.jits.shipping.routing.Router"/>
+<fullyQualifiedTypeName name="com.jits.shipping.ShippingMethod"/>
+<fullyQualifiedTypeName name="com.jits.shipping.routing.AirportRouter"/>
+<fullyQualifiedTypeName name="com.jits.shipping.routing.GroundRouter"/>
+<fullyQualifiedTypeName name="com.jits.shipping.routing.Airport"/>
+<fullyQualifiedTypeName name="com.jits.shipping.routing.Destination"/>
 </qualifiedTypeNameHistroy>

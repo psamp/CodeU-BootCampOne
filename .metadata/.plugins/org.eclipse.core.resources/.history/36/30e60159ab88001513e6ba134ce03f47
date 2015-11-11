@@ -1,0 +1,40 @@
+package com.jits.shipping.routing;
+
+import java.util.LinkedList;
+
+import com.jits.shipping.JitsException;
+import com.jits.shipping.Parcel;
+import com.jits.shipping.ShippingMethod;
+import com.jits.shipping.Warehouse;
+
+public abstract class Router {
+	
+	private void determineGRDRoute(Parcel parcel) {
+		try {
+			parcel.getRoute().add(GroundRouter.groundLocationLookup(parcel.getToZip()));
+		} catch (JitsException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void determineAIRRoute(Parcel parcel) {
+		parcel.getRoute().add(AirportRouter.airportLocationLookup(parcel.getFromZip()));
+		parcel.getRoute().add(AirportRouter.airportLocationLookup(parcel.getToZip()));
+	}
+	
+	void determineRoute(Parcel parcel) throws JitsException {
+		parcel.getRoute().add(new Warehouse());
+
+		if (this.getShippingType().equals(ShippingMethod.GRD)) {
+			this.determineGRDRoute();
+		} else if (this.getShippingType().equals(ShippingMethod.AIR)) {
+			this.determineAIRRoute();
+		}
+		
+		route.add(new Destination(this.getAddress(), this.getToZip()));
+
+		this.shipParcel();
+
+	}
+
+}

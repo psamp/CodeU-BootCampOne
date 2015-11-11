@@ -1,0 +1,25 @@
+package com.jits.shipping.routing;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class Chalkboard {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		
+		Airport a = AirportRouter.findClosestAirport("30331");
+		Airport b = AirportRouter.findClosestAirport("30326");
+		Airport c = AirportRouter.findClosestAirport("43321");
+		System.out.println(a.location());
+		System.out.println(b.location());
+		System.out.println(c.location());
+	}
+
+}
