@@ -1,0 +1,56 @@
+package com.jits.shipping.routing;
+
+class RailYard {
+	private String reigon;
+	private String city;
+	private String zip;
+	private String state;
+	
+	
+	RailYard(String reigon, String city, String zip, String state) {
+		this.reigon = reigon;
+		this.city = city;
+		this.zip = zip;
+		this.state = state;
+	}
+	
+	@Override
+	public String location() {
+		return "RY: " + this.getReigon() + " " + this.getCity() + " ";
+	}
+
+	String getReigon() {
+		return reigon;
+	}
+	
+	private void setReigon(String reigon) {
+		this.reigon = reigon;
+	}
+	
+	String getCity() {
+		return city;
+	}
+	
+	private void setCity(String city) {
+		this.city = city;
+	}
+	
+	String getZip() {
+		return zip;
+	}
+	
+	private void setZip(String zip) {
+		this.zip = zip;
+	}
+	
+	String getState() {
+		return state;
+	}
+	
+	private void setState(String state) {
+		this.state = state;
+	}
+	
+	
+
+}

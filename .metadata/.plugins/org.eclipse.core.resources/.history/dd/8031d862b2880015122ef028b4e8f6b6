@@ -1,0 +1,37 @@
+package com.jits.shipping.routing;
+
+import static org.junit.Assert.*;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+import com.jits.shipping.JitsException;
+import com.jits.shipping.routing.GroundRouter;
+
+public class RouterTest {
+	
+	@Rule
+	public ExpectedException thrown = ExpectedException.none(); 
+
+	@Test
+	public void testLookUpDistributionCenter() throws JitsException {
+		String expectedGA = "DistCtr: DC1 Raleigh ";
+		String actualGA = GroundRouter.locateByZip("30331").location();
+		
+		String expectedWI = "DistCtr: DC2 Kansas City ";
+		String actualWI = GroundRouter.locateByZip("53004").location();
+		
+		String expectedID = "DistCtr: DC3 Denver ";
+		String actualID = GroundRouter.locateByZip("85014").location();
+		
+		String expectedHI = "DistCtr: NA ";
+		String actualHI = GroundRouter.locateByZip("96716").location();
+		
+		assertEquals(expectedGA, actualGA);
+		assertEquals(expectedWI, actualWI);
+		assertEquals(expectedID, actualID);
+		assertEquals(expectedHI, actualHI);
+	}
+
+}

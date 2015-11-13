@@ -1,0 +1,30 @@
+package com.jits.shipping.routing;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.jits.shipping.JitsException;
+
+public class AirportRouterTest {
+	Router router;
+	
+	@Before
+	public void setUp() throws Exception {
+		router = new AirportRouter();
+	}
+
+	@Test
+	public void testLocateByZip() throws JitsException {
+		String expected = "Arprt: SEA Seattle-Tacoma Intl ";
+		String actual = router.locateByZip("98001").location();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void testDetermineRoute() {
+		fail("Not yet implemented");
+	}
+
+}

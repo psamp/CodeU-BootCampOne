@@ -1,0 +1,9 @@
+package com.jits.shipping.routing;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+class RailYardRouter {
+	private static Collection<RailYard> railYardList = new ArrayList<RailYard>();
+
+}

@@ -1,0 +1,24 @@
+package com.jits.shipping.routing;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class AirportRouterTest {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testLocateByZip() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDetermineRoute() {
+		fail("Not yet implemented");
+	}
+
+}

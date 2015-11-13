@@ -46,7 +46,7 @@ public class Parcel implements Serializable, Comparable<Parcel> {
 			String tracking = this.getLocation().scanParcel(this.getId());
 			this.setTrackingBarcodes(tracking);
 
-			TrackingWriter writer = new TrackingWriter("tracker.txt", false);
+			TrackingWriter writer = new TrackingWriter("tracker.txt", true);
 			writer.write(tracking);
 		}
 	}
