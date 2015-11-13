@@ -11,7 +11,7 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.WorkbookSettings;
 
-public class AirportRouter implements Router {
+public class AirportRouter extends Router {
   // zipcode->Coordinate table ["98103"->Coordinate(47.67335, 122.342621)]
   private static Map<String, Coordinate> zipcodeMap = 
     new HashMap<String, Coordinate>(29500);
@@ -20,7 +20,7 @@ public class AirportRouter implements Router {
   /**
    * Finds the closest Airport to the given zipcode.
    */
-  public static Airport findClosestAirport(String zipcode) {
+  public Location locateByZip(String zipcode) {
     Airport result = null;
     Coordinate zipCoord = zipcodeMap.get(zipcode);
     
@@ -39,12 +39,12 @@ public class AirportRouter implements Router {
     return result;
   }
   
-  static {
+  AirportRouter() {
     loadZipcodeData();
     loadAirports();
   }
 
-  private static void loadZipcodeData() {
+  private void loadZipcodeData() {
     // disable warnings
     WorkbookSettings settings = new WorkbookSettings();
     settings.setSuppressWarnings(true);

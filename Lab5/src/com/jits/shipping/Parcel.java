@@ -10,14 +10,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.jits.shipping.library.Validator;
-import com.jits.shipping.routing.AirportRouter;
-import com.jits.shipping.routing.Destination;
-import com.jits.shipping.routing.GroundRouter;
 import com.jits.shipping.routing.Location;
 import com.jits.shipping.util.TrackingWriter;
 
 public class Parcel implements Serializable, Comparable<Parcel> {
-	private static final long serialVersionUID = 1188081902829370890L;
+	private static final long serialVersionUID = -5916893597051354825L;
 	private ShippingMethod shippingType;
 	private long id;
 	private String fromZip;
@@ -34,35 +31,6 @@ public class Parcel implements Serializable, Comparable<Parcel> {
 
 	private static final Logger logger = LogManager.getLogger(Parcel.class.getSimpleName());
 
-	private void determineGRDRoute() {
-		try {
-			route.add(GroundRouter.distributionCenterLookup(this.getToZip()));
-		} catch (JitsException e) {
-			e.printStackTrace();
-		}
-	}
-
-	private void determineAIRRoute() {
-		route.add(AirportRouter.findClosestAirport(this.getFromZip()));
-		route.add(AirportRouter.findClosestAirport(this.getToZip()));
-	}
-
-	void determineRoute() throws JitsException {
-		this.route = new LinkedList<Location>();
-		route.add(new Warehouse());
-
-		if (this.getShippingType().equals(ShippingMethod.GRD)) {
-			this.determineGRDRoute();
-		} else if (this.getShippingType().equals(ShippingMethod.AIR)) {
-			this.determineAIRRoute();
-		}
-		
-		route.add(new Destination(this.getAddress(), this.getToZip()));
-
-		this.shipParcel();
-
-	}
-
 	public void shipParcel() throws JitsException {
 
 		if (this.routeIterator == null) {
@@ -78,7 +46,7 @@ public class Parcel implements Serializable, Comparable<Parcel> {
 			String tracking = this.getLocation().scanParcel(this.getId());
 			this.setTrackingBarcodes(tracking);
 
-			TrackingWriter writer = new TrackingWriter("tracker.txt", false);
+			TrackingWriter writer = new TrackingWriter("tracker.txt", true);
 			writer.write(tracking);
 		}
 	}
@@ -136,7 +104,7 @@ public class Parcel implements Serializable, Comparable<Parcel> {
 		}
 	}
 
-	String getFromZip() {
+	public String getFromZip() {
 		return fromZip;
 	}
 

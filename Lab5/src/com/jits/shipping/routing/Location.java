@@ -13,5 +13,4 @@ public abstract class Location {
 	public String scanParcel(long id) {
 		return this.location().trim() + "|" + id + "|" + this.date();
 	}
-
 }

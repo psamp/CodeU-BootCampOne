@@ -2,6 +2,7 @@ package com.jits.shipping.routing;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -11,22 +12,29 @@ import com.jits.shipping.routing.GroundRouter;
 
 public class RouterTest {
 	
+	Router router;
+	
+	@Before
+	public void setUp() {
+		router = new GroundRouter();
+	}
+	
 	@Rule
 	public ExpectedException thrown = ExpectedException.none(); 
 
 	@Test
 	public void testLookUpDistributionCenter() throws JitsException {
-		String expectedGA = "DC1";
-		String actualGA = GroundRouter.distributionCenterLookup("30331").getDestination();
+		String expectedGA = "DistCtr: DC1 Raleigh ";
+		String actualGA = router.locateByZip("30331").location();
 		
-		String expectedWI = "DC2";
-		String actualWI = GroundRouter.distributionCenterLookup("53004").getDestination();
+		String expectedWI = "DistCtr: DC2 Kansas City ";
+		String actualWI = router.locateByZip("53004").location();
 		
-		String expectedID = "DC3";
-		String actualID = GroundRouter.distributionCenterLookup("85014").getDestination();
+		String expectedID = "DistCtr: DC3 Denver ";
+		String actualID = router.locateByZip("85014").location();
 		
-		String expectedHI = "NA";
-		String actualHI = GroundRouter.distributionCenterLookup("96716").getDestination();
+		String expectedHI = "DistCtr: NA N/A ";
+		String actualHI = router.locateByZip("96716").location();
 		
 		assertEquals(expectedGA, actualGA);
 		assertEquals(expectedWI, actualWI);

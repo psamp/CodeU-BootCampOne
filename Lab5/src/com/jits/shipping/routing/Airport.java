@@ -24,6 +24,11 @@ class Airport extends Location {
 	public String location() {
 		return "Arprt: " + this.getCode() + " " + this.getName() + " ";
 	}
+	
+	@Override
+	public String scanParcel(long id) {
+		return this.getCode() + "|" + id + "|" + super.date();
+	}
 
 	String getCode() {
 		return code;

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="test (7)" project="Lab7Extra" tests="12" started="12" failures="0" errors="0" ignored="0">
+  <testsuite name="com.jits.shipping.report.ReportTest" time="3.844">
+    <testcase name="testGetParcels" classname="com.jits.shipping.report.ReportTest" time="3.844"/>
+  </testsuite>
+  <testsuite name="com.jits.shipping.routing.DestinationTest" time="0.002">
+    <testcase name="testScanParcel" classname="com.jits.shipping.routing.DestinationTest" time="0.002"/>
+  </testsuite>
+  <testsuite name="com.jits.shipping.ParcelTest" time="0.407">
+    <testcase name="testTrackingStrings" classname="com.jits.shipping.ParcelTest" time="0.407"/>
+  </testsuite>
+  <testsuite name="com.jits.shipping.routing.AirportRouterTest" time="0.711">
+    <testcase name="testLocateByZip" classname="com.jits.shipping.routing.AirportRouterTest" time="0.37"/>
+    <testcase name="testDetermineRouteHistory" classname="com.jits.shipping.routing.AirportRouterTest" time="0.341"/>
+  </testsuite>
+  <testsuite name="com.jits.shipping.routing.RouterTest" time="0.348">
+    <testcase name="testLookUpDistributionCenter" classname="com.jits.shipping.routing.RouterTest" time="0.348"/>
+  </testsuite>
+  <testsuite name="com.jits.shipping.WarehouseTest" time="2.14">
+    <testcase name="testToZip" classname="com.jits.shipping.WarehouseTest" time="0.4"/>
+    <testcase name="testInvalidShippingType" classname="com.jits.shipping.WarehouseTest" time="0.379"/>
+    <testcase name="testFromZip" classname="com.jits.shipping.WarehouseTest" time="0.338"/>
+    <testcase name="testId" classname="com.jits.shipping.WarehouseTest" time="0.326"/>
+    <testcase name="testNewParcelFromIncomingBarcode" classname="com.jits.shipping.WarehouseTest" time="0.361"/>
+    <testcase name="testGetReport" classname="com.jits.shipping.WarehouseTest" time="0.336"/>
+  </testsuite>
+</testrun>

@@ -13,7 +13,7 @@ import com.jits.shipping.JitsException;
 import jxl.*;
 import jxl.read.biff.BiffException;
 
-public class GroundRouter implements Router {
+public class GroundRouter extends Router {
 
 	private static Map<String, DistributionCenter> statesToDistributionCenters;
 	private static Map<String, String> zipcodeMap;
@@ -111,15 +111,15 @@ public class GroundRouter implements Router {
 
 	}
 
-	private static String stateLookup(String zipcode) {
+	private String stateLookup(String zipcode) {
 		return GroundRouter.zipcodeMap.get(zipcode);
 	}
 
-	public static DistributionCenter distributionCenterLookup(String zipcode) throws JitsException {
+	public Location locateByZip(String zipcode) throws JitsException {
 		DistributionCenter rtn;
 
 		try {
-			rtn = GroundRouter.statesToDistributionCenters.get(GroundRouter.stateLookup(zipcode));
+			rtn = GroundRouter.statesToDistributionCenters.get(this.stateLookup(zipcode));
 
 		} catch (NullPointerException e) {
 

@@ -5,6 +5,7 @@ import java.util.Collections;
 
 import com.jits.shipping.report.Report;
 import com.jits.shipping.routing.Location;
+import com.jits.shipping.routing.Router;
 
 public class Warehouse extends Location {
 	private ArrayList<Parcel> inventory;
@@ -32,7 +33,7 @@ public class Warehouse extends Location {
 		parcel.setWidth(values[6]);
 		parcel.setDepth(values[7]);
 		parcel.setAddress(values[10]);
-		parcel.determineRoute();
+		Router.determineRoute(parcel);
 		
 		this.updateInventory(parcel);
 		
