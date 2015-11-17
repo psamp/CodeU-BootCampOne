@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="ReportTest (6)" project="Lab7Extra" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.jits.shipping.report.ReportTest" time="3.165">
-    <testcase name="testGetParcels" classname="com.jits.shipping.report.ReportTest" time="3.165"/>
-  </testsuite>
-</testrun>

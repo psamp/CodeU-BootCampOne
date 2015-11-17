@@ -20,7 +20,6 @@
 <fullyQualifiedTypeName name="jxl.Workbook"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="com.jits.routing.Location"/>
-<fullyQualifiedTypeName name="com.jits.shipping.Warehouse"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="com.jits.routing.Router"/>
 <fullyQualifiedTypeName name="java.util.TreeSet"/>
@@ -34,7 +33,6 @@
 <fullyQualifiedTypeName name="com.jits.library.ShippingTypeComparator"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="com.jits.shipping.Location"/>
-<fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="com.jits.parcel.JitsException"/>
@@ -51,4 +49,6 @@
 <fullyQualifiedTypeName name="com.jits.shipping.routing.RailYard"/>
 <fullyQualifiedTypeName name="com.jits.shipping.routing.GroundRouter"/>
 <fullyQualifiedTypeName name="com.jits.shipping.Parcel"/>
+<fullyQualifiedTypeName name="com.jits.shipping.Warehouse"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
 </qualifiedTypeNameHistroy>

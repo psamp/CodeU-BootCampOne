@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="AirportRouterTest" project="Lab7" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="com.jits.shipping.routing.AirportRouterTest" time="3.488">
-    <testcase name="testLocateByZip" classname="com.jits.shipping.routing.AirportRouterTest" time="3.072"/>
-    <testcase name="testDetermineRouteHistory" classname="com.jits.shipping.routing.AirportRouterTest" time="0.416"/>
-  </testsuite>
-</testrun>
