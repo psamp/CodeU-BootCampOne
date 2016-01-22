@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename compilation unit &apos;com.jits.shipping.routing.RailYardRouter.java&apos; to &apos;RailRouter.java&apos;&#x0A;- Original project: &apos;Lab7&apos;&#x0A;- Original element: &apos;com.jits.shipping.routing.RailYardRouter.java&apos;&#x0A;- Renamed element: &apos;com.jits.shipping.routing.RailRouter.java&apos;" description="Rename compilation unit &apos;RailYardRouter.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.jits.shipping.routing{RailYardRouter.java" name="RailRouter.java" references="false" stamp="1447359901233" version="1.0"/>
-</session>

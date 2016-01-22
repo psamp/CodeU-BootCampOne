@@ -1,9 +1,0 @@
-package com.jits.shipping.routing;
-
-class RailYard {
-	private String reigon;
-	private String city;
-	private String zip;
-	private String state;
-
-}
